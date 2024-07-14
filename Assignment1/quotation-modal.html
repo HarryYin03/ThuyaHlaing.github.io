@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Sample Quotation</title>
+    <meta name="description" content="Company quotation">
+    <meta name="author" content="SitePoint">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<b class="name" style="color: rgb(124, 8, 8);">Car Go
+</b>
+
+<p>
+    Bangna Trad KM.26
+    <br>Samutprakarn
+    <span style="float:right;" id="car">
+        <img src="img/car.jpg" style="width:100px;height:100px;">
+    </span>
+    <br>Bangsaothong
+</p>
+<br>
+<p>Your ZIP code here<input id="zip-code" placeholder="10100" type="text" maxlength="5"></p>
+<p id="contact">
+    Phone: <input id="phone" type="tel" placeholder="02-123-4567" maxlength="10">
+    <span style="float: right;">
+        <input type="date" id="date" name="date">
+    </span>
+</p>
+
+<p>
+    Item:
+    <select id="itemSelect">
+        <option value="Cover">Cover</option>
+        <option value="Wheel">Wheel</option>
+        <option value="Seat">Seat</option>
+        <option value="GPS">GPS</option>
+    </select>
+    Amount: <input id="amountInput" type="number" placeholder="1" min="1">
+</p>
+
+<button id="btnAdd">Add Item</button>
+
+<table class="center">
+    <thead>
+    <tr>
+        <th>Quantity</th>
+        <th>Description</th>
+        <th>Unit Price</th>
+        <th>Amount</th>
+    </tr>
+    </thead>
+    <tbody id="dataTable">
+
+    </tbody>
+    <tfooter>
+        <tr id="sub-total">
+            <td colspan="3" class="data2 r colo"> Subtotal</td>
+            <td colspan="1" class="data2 r" id="subTotal">0.00</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="data2 r colo"> VAT</td>
+            <td colspan="1" class="data2 r" id="salesTax">0.00</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="data2 r colo"> Total Due</td>
+            <td colspan="1" class="data2 r" id="totalDue">0.00</td>
+        </tr>
+    </tfooter>
+</table>
+
+<br>
+
+<p class="cen">
+    <br><b>If you have any question concerning this invoices, call: 1234</b>
+    <br>
+    <br><b>THANK YOU FOR YOUR SUPPORT</b>
+</p>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+table {
+    border-spacing: 0px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    background-color: rgb(86, 94, 99);
+    color: rgb(139, 0, 44);
+    border: solid #000000 1px;
+}
+
+td {
+    vertical-align: top;
+}
+
+#sub-total {
+    border-top: solid #000 1px;
+}
+
+#bottom-line {
+    border-bottom: solid #000 1px;
+}
+
+.data {
+    border-left: solid #000000 1px;
+    border-right: solid #000000 1px;
+}
+
+.data2 {
+    border-right: solid #000000 1px;
+}
+
+p.i {
+    font-style: italic;
+  }
+
+.r {
+    text-align: right;
+}
+
+.cen {
+    text-align: center;
+}
+
+.center {
+    margin: auto;
+  }
+
+.colo {
+    font-weight: bold;
+    color: rgb(139, 0, 7);
+}
+
+.thick {
+    font-weight: bold;
+}
+
+.tab { 
+    display:inline-block; 
+    margin-left: 40px; 
+}
+
+.name{
+    font-size: 2rem;
+}
+
+body{
+    box-sizing: border-box;
+    padding: 1rem 4rem 1rem 4rem;
+    height: 100%;
+    width: 100%;
+}
+
+#zip-code{
+    margin-left: 10px;
+    padding: 5px;
+    width: 100px;
+    height: 30px;
+}
+
+#contact{
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+#phone{
+    padding: 5px;
+    width: 120px;
+    height: 30px;
+}
+
+#itemSelect{
+    width: 120px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+#amountInput{
+    width: 50px;
+    height: 30px;
+}
+
+#btnAdd{
+    margin-bottom: 30px;
+    border: none;
+    background-color: #6e0523;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+table.center, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+
+#car img{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+
+p{
+    color:rgb(139, 0, 7)
+}

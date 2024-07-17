@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     date.value = formattedDate;
 
     document.getElementById('btnAdd').addEventListener('click', function () {
+        $('#addItemModal').modal('show');
+    });
+
+    document.getElementById('saveItemButton').addEventListener('click', function () {
         const itemSelect = document.getElementById('itemSelect');
         const amountInput = document.getElementById('amountInput');
 
@@ -52,6 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update the totals
         updateTotals();
+
+        // Hide the modal
+        $('#addItemModal').modal('hide');
     });
 
     function updateTotals() {

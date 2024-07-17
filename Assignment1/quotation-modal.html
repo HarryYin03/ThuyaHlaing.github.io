@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Sample Quotation</title>
+    <title>Car Go</title>
     <meta name="description" content="Company quotation">
     <meta name="author" content="SitePoint">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel= "shortcut icon" href="img/car.ico" type="image/x-icon" style="border-radius: 50%;">
 </head>
 <body>
 <b class="name" style="color: rgb(124, 8, 8);">Car Go
@@ -28,17 +29,6 @@
     <span style="float: right;">
         <input type="date" id="date" name="date">
     </span>
-</p>
-
-<p>
-    Item:
-    <select id="itemSelect">
-        <option value="Cover">Cover</option>
-        <option value="Wheel">Wheel</option>
-        <option value="Seat">Seat</option>
-        <option value="GPS">GPS</option>
-    </select>
-    Amount: <input id="amountInput" type="number" placeholder="1" min="1">
 </p>
 
 <button id="btnAdd">Add Item</button>
@@ -79,36 +69,39 @@
     <br><b>THANK YOU FOR YOUR SUPPORT</b>
 </p>
 
-
-<div class="modal" tabindex="-1" role="dialog" id="exampleModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<!-- Modal -->
+<div id="addItemModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Item</h2>
+        <form id="addItemForm">
+            <div class="form-group">
+                <label for="itemSelect">Item</label>
+                <select id="itemSelect" class="form-control">
+                    <option value="Cover">Cover</option>
+                    <option value="Wheel">Wheel</option>
+                    <option value="Seat">Seat</option>
+                    <option value="GPS">GPS</option>
+                </select>
             </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
+            <div class="form-group">
+                <label for="amountInput">Amount</label>
+                <input id="amountInput" type="number" class="form-control" placeholder="0" min="1">
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
+        </form>
+        <button id="saveItemButton" class="btn">Add Item</button>
     </div>
 </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
-
 </html>

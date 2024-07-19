@@ -1,0 +1,27 @@
+[
+  { "id": 1, "name": "Door Visor", "price": 1000, "image": "door-visor.jpg" },
+  { "id": 2, "name": "Mud Flap", "price": 500, "image": "mud-flap.jpg" },
+  { "id": 3, "name": "Car Cover", "price": 2000, "image": "car-cover.jpg" },
+  { "id": 4, "name": "Seat Cover", "price": 3000, "image": "seat-cover.jpg" },
+  {
+    "id": 5,
+    "name": "Steering Cover",
+    "price": 500,
+    "image": "steering-cover.jpg"
+  },
+  { "id": 6, "name": "Neck Rest", "price": 300, "image": "neck-rest.jpg" },
+  { "id": 7, "name": "Car Perfume", "price": 200, "image": "car-perfume.jpg" },
+  {
+    "id": 8,
+    "name": "Mobile Holder",
+    "price": 300,
+    "image": "mobile-holder.jpg"
+  },
+  { "id": 9, "name": "Car Charger", "price": 500, "image": "car-charger.jpg" },
+  {
+    "id": 10,
+    "name": "Air Freshner",
+    "price": 200,
+    "image": "air-freshner.jpg"
+  }
+]

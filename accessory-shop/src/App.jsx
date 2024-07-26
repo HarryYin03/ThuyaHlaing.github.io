@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/esm/Button";
+import Form from "react-bootstrap/esm/Form";
+import Container from "react-bootstrap/esm/Container";
+import Col from "react-bootstrap/esm/Col";
+import Row from "react-bootstrap/esm/Row";
 import productList from "./product-list.json";
 import DataTable from "./DataTable";
 import 'bootstrap-icons/font/bootstrap-icons.css';

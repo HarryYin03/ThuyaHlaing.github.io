@@ -6,42 +6,57 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import productList from "./product-list.json";
 import DataTable from "./DataTable";
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
-  const productRef = useRef()
-  const quantityRef = useRef()
+  const productRef = useRef();
+  const quantityRef = useRef();
 
-  const [price, setPrice] = useState(productList[0].price)
-  const [selectedItems, setSelectedItems] = useState([])
+
+  const [price, setPrice] = useState(productList[0].price);
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [filteredSelectedItems, setFilteredSelectedItems] = useState([]);
 
   const handleSelect = (e) => {
-    const pid = parseInt(productRef.current.value)
-    const product = productList.find(p => p.id === pid)
-    console.table(product)
-
-    setPrice(product.price)
-  }
+    const pid = parseInt(productRef.current.value);
+    const product = productList.find(p => p.id === pid);
+    setPrice(product.price);
+  };
 
   const handleAdd = (e) => {
-    const pid = parseInt(productRef.current.value)
-    console.log(typeof pid)
-    const product = productList.find(p => p.id === pid)
-    const q = quantityRef.current.value
-    // console.log(pid, q)
-    // console.table(product)
+    const pid = parseInt(productRef.current.value);
+    const product = productList.find(p => p.id === pid);
+    const q = quantityRef.current.value;
 
-    selectedItems.push({
-      // id: product.id,
-      // name: product.name,
-      // price: product.price,
+    const newItem = {
       ...product,
       quantity: q
-    })
+    };
 
-    setSelectedItems([...selectedItems])
+    const updatedItems = [...selectedItems, newItem];
+    setSelectedItems(updatedItems);
+    setFilteredSelectedItems(updatedItems);
+  };
 
-    console.table(selectedItems)
-  }
+  const deleteItemByIndex = (index) => {
+    selectedItems.splice(index, 1);
+    setSelectedItems([...selectedItems]);
+  };
+  const search = (keyword) => {
+    setFilteredSelectedItems([
+      ...selectedItems.filter(item => item.name.toLowerCase().includes(keyword.toLowerCase()))
+    ]);
+  };
+
+  const sortAscending = () => {
+    const sortedItems = [...filteredSelectedItems].sort((a, b) => a.name.localeCompare(b.name));
+    setFilteredSelectedItems(sortedItems);
+  };
+
+  const sortDescending = () => {
+    const sortedItems = [...filteredSelectedItems].sort((a, b) => b.name.localeCompare(a.name));
+    setFilteredSelectedItems(sortedItems);
+  };
 
   return (
     <>
@@ -79,12 +94,18 @@ function App() {
             <Button variant="success" onClick={handleAdd}>Add</Button>
           </Col>
           <Col>
-            <DataTable data={selectedItems} />
+            <DataTable
+              data={filteredSelectedItems}
+              onDelete={deleteItemByIndex}
+              onSearch={search}
+              sortAscending={sortAscending}
+              sortDescending={sortDescending}
+            />
           </Col>
         </Row>
       </Container>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

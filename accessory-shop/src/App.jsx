@@ -39,8 +39,9 @@ function App() {
   };
 
   const deleteItemByIndex = (index) => {
-    selectedItems.splice(index, 1);
-    setSelectedItems([...selectedItems]);
+    const updatedItems = selectedItems.filter((_, i) => i !== index);
+    setSelectedItems(updatedItems);
+    setFilteredSelectedItems(updatedItems);
   };
   const search = (keyword) => {
     setFilteredSelectedItems([

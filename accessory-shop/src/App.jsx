@@ -7,15 +7,18 @@ import Row from "react-bootstrap/esm/Row";
 import productList from "./product-list.json";
 import DataTable from "./DataTable";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { useLocalStorage } from "react-use";
+import { TotalPriceContext } from "./context";
 
 function App() {
   const productRef = useRef();
   const quantityRef = useRef();
 
-
   const [price, setPrice] = useState(productList[0].price);
-  const [selectedItems, setSelectedItems] = useState([]);
-  const [filteredSelectedItems, setFilteredSelectedItems] = useState([]);
+  const [selectedItems, setSelectedItems] = useLocalStorage("selected-items", []);
+  const [filteredSelectedItems, setFilteredSelectedItems] = useState(selectedItems);
+
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const handleSelect = (e) => {
     const pid = parseInt(productRef.current.value);
@@ -43,6 +46,7 @@ function App() {
     setSelectedItems(updatedItems);
     setFilteredSelectedItems(updatedItems);
   };
+
   const search = (keyword) => {
     setFilteredSelectedItems([
       ...selectedItems.filter(item => item.name.toLowerCase().includes(keyword.toLowerCase()))
@@ -60,7 +64,7 @@ function App() {
   };
 
   return (
-    <>
+    <TotalPriceContext.Provider value={{ totalPrice, setTotalPrice }}>
       <Container>
         <Row>
           <Col xs={6}>
@@ -104,8 +108,13 @@ function App() {
             />
           </Col>
         </Row>
+        <Row>
+          <Col>
+            <h3>Total Price: ${totalPrice}</h3>
+          </Col>
+        </Row>
       </Container>
-    </>
+    </TotalPriceContext.Provider>
   );
 }
 

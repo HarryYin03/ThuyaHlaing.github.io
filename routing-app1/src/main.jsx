@@ -52,9 +52,7 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  {
-    basename: "/routing-app/",
-  }
+  
 );
 
 createRoot(document.getElementById("root")).render(

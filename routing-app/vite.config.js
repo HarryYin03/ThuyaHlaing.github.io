@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+ 
 export default defineConfig({
+  base: '/routing-app/',  // Set the base path for GitHub Pages
   plugins: [react()],
-  base: '/routing-app/', // This ensures paths are correctly resolved
-  build: {
-    outDir: 'dist', // Output directory for the build files
+  server: {
+    historyApiFallback: true,  // Ensure routing fallback
   },
-})
+});

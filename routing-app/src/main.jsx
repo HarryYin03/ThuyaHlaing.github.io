@@ -55,7 +55,7 @@ const router = createBrowserRouter(
         },
     ],
     {
-        basename: "/routing-app/", // Ensure this matches your Vite config base or subdirectory
+        basename: "/web-development/", // Ensure this matches your Vite config base or subdirectory
     }
 );
 
